@@ -4,9 +4,22 @@ package lk.ijse;
     @created 1/6/2024 - 11:38 AM
 */
 
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
 public class Server {
     public static void main(String[] args)
     {
         System.out.println("server");
+
+        try {
+            ServerSocket serverSocket = new ServerSocket(3002);
+            serverSocket.accept();
+            Socket localSocket = new Socket();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
