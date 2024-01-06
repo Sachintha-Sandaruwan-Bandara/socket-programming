@@ -16,8 +16,10 @@ public class Server {
 
         try {
             ServerSocket serverSocket = new ServerSocket(3002);
-            serverSocket.accept();
-            Socket localSocket = new Socket();
+            System.out.println("server is started");
+            Socket localSocket = serverSocket.accept();
+            System.out.println("server accepted");
+
             DataInputStream dataInputStream = new DataInputStream(localSocket.getInputStream());
             String massage = dataInputStream.readUTF();
             System.out.println("from client:  "+massage);
