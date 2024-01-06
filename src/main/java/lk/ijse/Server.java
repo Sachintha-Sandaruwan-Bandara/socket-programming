@@ -19,6 +19,8 @@ public class Server {
             serverSocket.accept();
             Socket localSocket = new Socket();
             DataInputStream dataInputStream = new DataInputStream(localSocket.getInputStream());
+            String massage = dataInputStream.readUTF();
+            System.out.println("from client:  "+massage);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
