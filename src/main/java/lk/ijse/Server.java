@@ -4,6 +4,7 @@ package lk.ijse;
     @created 1/6/2024 - 11:38 AM
 */
 
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -17,6 +18,7 @@ public class Server {
             ServerSocket serverSocket = new ServerSocket(3002);
             serverSocket.accept();
             Socket localSocket = new Socket();
+            DataInputStream dataInputStream = new DataInputStream(localSocket.getInputStream());
 
         } catch (IOException e) {
             throw new RuntimeException(e);
